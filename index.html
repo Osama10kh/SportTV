@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sport</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/9e5d1913ca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="navList">
+                <li><a class="navItem" href="">live</a></li>
+                <li><a class="navItem" href="">calender</a></li>
+                <li class="realMadrid"><a class="navItem" href="">real madrid</a>
+                    <ul class="dropDownList">
+                        <li><a class="dropDownItem" href="#">squad</a></li>
+                        <li><a class="dropDownItem" href="#">next game</a></li>
+                        <li><a class="dropDownItem" href="#">TV</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="title">football</h1>
+    </header>
+
+    <main>
+        <div class="channelscontainer">
+            <button class="btn" id="postYourChannel" onclick="postYourChannel()">channel</button>
+            <button class="btn" id="postYourChannel1" onclick="postYourChanne()">channel</button>
+        </div>
+
+        <div class="iframe">
+            <iframe class="frameScreen" id="forPostyourChannel" data-src="" src="about:blank" allowfullscreen></iframe>
+
+        </div>
+    </main>
+
+    <aside class="side">
+        <div class="rightSide ad">
+            <a href="#">
+                <img id="adImg" src="./img/soldout.jpg" alt="shirt">
+                <h4 id="buyAd">buy now!</h4>
+            </a>
+            <button id="deletButton" class="deletButton">
+                <i class="fas fa-times fa-2x"></i>
+            </button>
+        </div>
+    </aside>
+
+    <aside class="side">
+        <div class="leftSide ad">
+            <h2>book your tickets today</h2>
+            <h3> <strong>25% descount!</strong> </h3>
+            <img src="./img/ticket.jpg" alt="ticket">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, odit.</p>
+            <button class="btn adButton"><a href="">booking</a></button>
+        </div>
+    </aside>
+
+    <footer>
+        <h5>follow us</h5>
+        <nav class="navFooter">
+            <a href="#"><i class="facebook fab fa-facebook  fa-2x"></i></a>
+            <a href="#"><i class="instagram fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="twitter fab fa-twitter   fa-2x"></i></a>
+        </nav>
+    </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- delet ad  -->
+    <script>
+        let adImg = document.querySelector("#adImg");
+        let deletButton = document.querySelector("#deletButton");
+        let h4Word = document.querySelector("#buyAd")
+
+        deletButton.addEventListener("click", function (ev) {
+            adImg.style.display = "none";
+            deletButton.style.display = "none";
+            h4Word.style.display = "none";
+
+        })
+    </script>
+
+    <!-- start iframe -->
+    <script>
+        function postYourChannel() {
+            var iframe = $("#forPostyourChannel");
+            iframe.attr("src", iframe.data("src"));
+        }
+    </script>
+
+</body>
+
+</html>

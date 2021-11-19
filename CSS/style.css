@@ -33,12 +33,11 @@ body {
 
 /* repeated  */
 
-header,
 .btn,
 .frameScreen,
 .dropDownList,
-.leftSide,
-footer {
+.dropDownListLive,
+.leftSide {
   border-radius: var(--border-radius);
   -webkit-border-radius: var(--border-radius);
   -moz-border-radius: var(--border-radius);
@@ -61,6 +60,7 @@ footer {
 
 header,
 .dropDownList,
+.dropDownListLive,
 .btn,
 footer {
   background-color: var(--background-color);
@@ -84,6 +84,7 @@ footer h5 {
 }
 
 .realMadrid,
+.live,
 .side,
 .rightSide h4,
 .deletButton {
@@ -91,7 +92,9 @@ footer h5 {
 }
 
 .dropDownList,
+.dropDownListLive,
 .dropDownList::before,
+.dropDownListLive::before,
 .leftSide,
 .rightSide {
   position: absolute;
@@ -114,14 +117,21 @@ footer h5 {
 
 /* header and nav bar  */
 
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
 header,
 footer {
+  height: 100px;
+  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-around;
   flex-direction: row-reverse;
   box-shadow: var(--box-shadow);
-  width: 80%;
-  margin: auto;
 }
 
 .title {
@@ -130,6 +140,23 @@ footer {
 }
 
 /* nav bar  */
+
+.delAdBtn {
+  background-color: var(--btn-hover-color);
+  padding: 0.5rem;
+  opacity: 0.7;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+
+.delAdBtn:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--shadow-color);
+}
 
 .navList {
   display: inline-flex;
@@ -146,7 +173,7 @@ footer {
   font: 900 1.5rem var(--primery-font-family);
 }
 
-.navItem:hover {
+.navItem:not(.delAdBtn):hover {
   background-color: var(--hover-color);
   color: #000000;
   padding: 2rem;
@@ -154,16 +181,25 @@ footer {
 
 /* drop down list  */
 
-.dropDownList {
+.dropDownList,
+.dropDownListLive {
   padding: 1rem;
   top: 63px;
-  right: 14%;
   width: max-content;
   list-style: none;
   display: none;
 }
 
-.dropDownList::before {
+.dropDownList {
+  right: 20%;
+}
+
+.dropDownListLive {
+  right: -25%;
+}
+
+.dropDownList::before,
+.dropDownListLive::before {
   content: "";
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
@@ -171,18 +207,21 @@ footer {
   height: 0;
   width: 0;
   top: -10px;
-  left: 90px;
+  right: 50%;
 }
 
-.dropDownList li {
+.dropDownList li,
+.dropDownListLive li {
   margin-top: 10px;
 }
 
-.dropDownList li a:hover {
+.dropDownList li a:hover,
+.dropDownListLive li a:hover {
   border-bottom: 3px solid var(--hover-color);
 }
 
-.navList .realMadrid:hover .dropDownList {
+.navList .realMadrid:hover .dropDownList,
+.navList .live:hover .dropDownListLive {
   display: block;
 }
 
@@ -202,7 +241,6 @@ main {
 /* channels btns */
 .btn {
   padding: 1rem 2rem;
-  margin: 0 10px;
   font-size: 1rem;
   border: none;
   cursor: pointer;
@@ -216,7 +254,17 @@ main {
   background-color: var(--btn-hover-color);
 }
 
+.chBtn {
+  margin: 100px 10px 0px;
+}
+
 /* i frame screen  */
+
+.sScreen {
+  position: absolute;
+  left: 460px;
+  top: 247px;
+}
 
 .iframe {
   display: flex;
@@ -239,7 +287,7 @@ main {
   grid-template-rows: repeat(5, auto);
   row-gap: 15px;
   margin: 10px 0;
-  top: -550px;
+  bottom: 50%;
   left: 10px;
   width: 22%;
   padding: 1rem;
@@ -274,7 +322,7 @@ main {
 /* right ad.  */
 
 .rightSide {
-  top: -550px;
+  bottom: 60px;
   right: 10px;
 }
 
@@ -319,9 +367,7 @@ footer h5 {
   color: #28b5b5;
 }
 
-.facebook:hover,
-.instagram:hover,
-.twitter:hover {
+.facebook:hover {
   background-color: #f9f9f9;
   border-radius: 50%;
   -webkit-border-radius: 50%;

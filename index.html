@@ -14,29 +14,52 @@
     <header>
         <nav>
             <ul class="navList">
-                <li><a class="navItem" href="">live</a></li>
-                <li><a class="navItem" href="">calender</a></li>
-                <li class="realMadrid"><a class="navItem" href="">real madrid</a>
+                <li class="navItem delAdBtn">delet ad</li>
+
+                <li class="live"><a class="navItem" href="#">live</a>
+                    <ul class="dropDownListLive">
+                        <li><a class="dropDownItem" href="https://go4kora.com/">Go4koora</a></li>
+                        <li><a class="dropDownItem" href="https://kora.livekoora.online/">koora live</a></li>
+                        <li><a class="dropDownItem" href="https://kora-online.tv:2096/">koora life</a></li>
+                        <li><a class="dropDownItem" href="https://online.yalla-shoot-new.com/">koora goal</a></li>
+                        <li><a class="dropDownItem" href="https://hd.360kora.com/">koora 360</a></li>
+                        <li><a class="dropDownItem" href="https://livehd7.live:2096/">live7</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="navItem" href="https://www.sportskeeda.com/football/schedule">calender</a></li>
+
+                <li class="realMadrid"><a class="navItem" href="#">real madrid</a>
                     <ul class="dropDownList">
-                        <li><a class="dropDownItem" href="#">squad</a></li>
-                        <li><a class="dropDownItem" href="#">next game</a></li>
-                        <li><a class="dropDownItem" href="#">TV</a></li>
+                        <li><a class="dropDownItem"
+                                href="https://www.realmadrid.com/en/about-real-madrid/news/football/squad-lists-">squad</a>
+                        </li>
+                        <li><a class="dropDownItem" href="https://www.realmadrid.com/en/football">next game</a></li>
+                        <li><a class="dropDownItem" href="https://www.realmadrid.com/en/football/schedule">calendar</a>
+                        </li>
+                        <li><a class="dropDownItem" href="https://www.realmadrid.com/en/real-madrid-tv">TV</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <h1 class="title">football</h1>
+        <h1 class="title">football<i class="fas fa-futbol"></i></h1>
     </header>
 
     <main>
         <div class="channelscontainer">
-            <button class="btn" id="postYourChannel" onclick="postYourChannel()">channel</button>
-            <button class="btn" id="postYourChannel1" onclick="postYourChanne()">channel</button>
+            <button class="btn chBtn" id="postYourChannel1" onclick="postYourChannel1()">channel</button>
+            <button class="btn chBtn" id="postYourChannel2" onclick="postYourChannel2()">channel</button>
         </div>
 
-        <div class="iframe">
-            <iframe class="frameScreen" id="forPostyourChannel" data-src="" src="about:blank" allowfullscreen></iframe>
+        <div class="iframe fScreen">
+            <iframe class="frameScreen" id="forPostyourChannel1" data-src="https://www.realmadrid.com/en/real-madrid-tv"
+                src="about:blank" allowfullscreen></iframe>
+        </div>
 
+        <div class="iframe sScreen">
+            <iframe class="frameScreen" id="forPostyourChannel2"
+                data-src="https://www.youtube.com/watch?v=1S2ZVoVsULk&ab_channel=joseManuelmartinez" src="about:blank"
+                allowfullscreen></iframe>
         </div>
     </main>
 
@@ -71,31 +94,8 @@
         </nav>
     </footer>
 
-
-
+    <script src="./app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-    <!-- delet ad  -->
-    <script>
-        let adImg = document.querySelector("#adImg");
-        let deletButton = document.querySelector("#deletButton");
-        let h4Word = document.querySelector("#buyAd")
-
-        deletButton.addEventListener("click", function (ev) {
-            adImg.style.display = "none";
-            deletButton.style.display = "none";
-            h4Word.style.display = "none";
-
-        })
-    </script>
-
-    <!-- start iframe -->
-    <script>
-        function postYourChannel() {
-            var iframe = $("#forPostyourChannel");
-            iframe.attr("src", iframe.data("src"));
-        }
-    </script>
 
 </body>
 

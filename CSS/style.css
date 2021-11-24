@@ -66,11 +66,6 @@ footer {
   background-color: var(--background-color);
 }
 
-.navItem,
-.dropDownItem,
-.adButton a {
-  text-decoration: none;
-}
 
 .title,
 .navItem,
